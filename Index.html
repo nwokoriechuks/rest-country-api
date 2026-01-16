@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Where in the world?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="light">
+    <header class="header">
+      <h1 class="title">Where in the world?</h1>
+      <button id="themeToggle" type="button" aria-label="Toggle theme">
+        Dark Mode
+      </button>
+    </header>
+
+    <main class="container">
+      <section class="controls" aria-label="Search and filter controls">
+        <div class="search">
+          <span class="search-icon" aria-hidden="true">🔎</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search for a country..."
+            autocomplete="off"
+            aria-label="Search for a country"
+          />
+        </div>
+
+        <select id="regionSelect" class="select" aria-label="Filter by region">
+          <option value="all">Filter by Region</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+          <option value="antarctic">Antarctic</option>
+        </select>
+      </section>
+
+      <section class="grid-wrap" aria-label="Countries list">
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <div id="countriesGrid" class="countries-grid"></div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Details</title>
+    <link rel="stylesheet" href="countries.css" />
+  </head>
+
+  <body class="light">
+    <header class="header">
+      <h1 class="title"><a class="brand" href="index.html">Where in the world?</a></h1>
+      <button id="themeToggle" type="button" aria-label="Toggle theme">
+        Dark Mode
+      </button>
+    </header>
+
+    <main class="container">
+      <a class="back" href="index.html" aria-label="Back to homepage">← Back</a>
+
+      <section id="status" class="status" role="status" aria-live="polite"></section>
+
+      <section id="details" class="details" aria-label="Country details"></section>
+    </main>
+
+    <script src="countries.js"></script>
+  </body>
+</html>
