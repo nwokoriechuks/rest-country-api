@@ -1,5 +1,5 @@
 const API_BASE = "https://restcountries.com/v3.1"; // same API base used in the CodePen :contentReference[oaicite:1]{index=1}
-
+const earth = document.getElementById("earth");
 const themeToggle = document.getElementById("themeToggle");
 const searchInput = document.getElementById("searchInput");
 const regionSelect = document.getElementById("regionSelect");
@@ -9,6 +9,22 @@ const statusEl = document.getElementById("status");
 let allCountries = [];
 let searchTerm = "";
 let regionTerm = "all";
+
+
+let rotation = 0;
+let spinning = true;
+
+ earth.style.display = 'inline-block';
+  earth.style.fontSize = '28px';
+earth.addEventListener("mouseenter", () => spinning = false);
+earth.addEventListener("mouseleave", ()=> spinning =true);
+
+setInterval(() =>{
+  if  (!spinning) return;
+  rotation  +=1;
+  earth.style.transform = 'rotate($(rotation)deg)';
+}, 40);
+
 
 /* ---------------- THEME ---------------- */
 
@@ -36,6 +52,7 @@ function syncThemeButtonText() {
   const isDark = document.body.classList.contains("dark");
   themeToggle.textContent = isDark ? "Dark Mode" : "Light Mode";
 }
+
 
 
 /* ---------------- DATA LOAD ---------------- */

@@ -1,8 +1,24 @@
 const API_BASE = "https://restcountries.com/v3.1";
-
+const earth = document.getElementById("earth");
 const themeToggle = document.getElementById("themeToggle");
 const statusEl = document.getElementById("status");
 const detailsEl = document.getElementById("details");
+
+
+let rotation = 0;
+let spinning = true;
+
+ earth.style.display = 'inline-block';
+  earth.style.fontSize = '28px';
+earth.addEventListener("mouseenter", () => spinning = false);
+earth.addEventListener("mouseleave", ()=> spinning =true);
+
+setInterval(() =>{
+  if  (!spinning) return;
+  rotation  +=1;
+  earth.style.transform = 'rotate($(rotation)deg)';
+}, 20);
+
 
 /* ---------------- THEME ---------------- */
 initTheme();
